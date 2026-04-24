@@ -1,11 +1,11 @@
 from fastapi import APIRouter
-from db.schema import EmployeeSchema
+from hr_employee.db.schema import EmployeeSchema
 import joblib
 from pathlib import Path
 
 
 
-BASE_DIR = Path(__file__).parent
+BASE_DIR = Path(__file__).parent.parent
 
 model = joblib.load(BASE_DIR / 'model_rf.pkl')
 scaler = joblib.load(BASE_DIR / 'scaler.pkl')
